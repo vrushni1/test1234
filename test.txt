@@ -1,0 +1,40 @@
+
+name: Build and Deploy Package
+
+on: [workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '17'
+
+      - name: Grant execute permissions to gradlew
+        run: chmod +x ./gradlew
+
+      - name: Build with Gradle
+        id: build
+        run: ./gradlew build --no-daemon --console=plain
+
+      - name: Create Publish and Deploy Package
+        id: deploy
+        uses: digital-ai/github-actions-deploy@main
+        with:
+          serverUrl: ${{ secrets.SERVERURL }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          manifestPath: '/deployit-manifest.xml'
+          action: 'create_publish_deploy'
+          outputPath: '/outputdar'
+          versionNumber: ${{ vars.VERSIONNUMBER }}
+          packageName: 'appForAction-1.0.dar'
+          environmentId: 'Environments/envForAction'
+          rollback: 'yes'
