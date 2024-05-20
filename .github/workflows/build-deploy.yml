@@ -32,5 +32,5 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           darPackagePath: '/azworklflow-1.0.dar'
           action: 'publish_deploy'
-          environmentId: 'Environments/envForAction'
+          environmentId: 'Environments/azEnv'
           rollback: 'true'
