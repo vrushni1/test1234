@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<udm.DeploymentPackage version="1.0" application="appForAction">
+  <application />
+  <orchestrator />
+  <deployables>
+    <file.Archive name="/demoJar" file="/build/libs/demo-0.0.1.jar">
+      <targetPath>/tmp</targetPath>
+      <targetFileName>demo-0.0.1.jar</targetFileName>
+    </file.Archive>
+  </deployables>
+  <applicationDependencies />
+  <dependencyResolution>LATEST</dependencyResolution>
+  <undeployDependencies>false</undeployDependencies>
+  <templates />
+  <boundTemplates />
+</udm.DeploymentPackage>
