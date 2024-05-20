@@ -36,4 +36,4 @@ jobs:
           versionNumber: ${{ vars.VERSIONNUMBER }}
           packageName: 'appForAction-1.0.dar'
           environmentId: 'Environments/envForAction'
-          rollback: 'false'
+          rollback: 'true'
