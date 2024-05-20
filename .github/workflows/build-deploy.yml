@@ -30,10 +30,7 @@ jobs:
           serverUrl: ${{ secrets.SERVERURL }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          manifestPath: '/deployit-manifest.xml'
-          action: 'create_publish_deploy'
-          outputPath: '/outputdar'
-          versionNumber: ${{ vars.VERSIONNUMBER }}
-          packageName: 'appForAction-1.0.dar'
+          darPackagePath: '/appForAction-1.0.dar'
+          action: 'publish_deploy'
           environmentId: 'Environments/envForAction'
           rollback: 'true'
