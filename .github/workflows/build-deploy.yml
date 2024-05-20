@@ -30,7 +30,7 @@ jobs:
           serverUrl: ${{ secrets.SERVERURL }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          darPackagePath: '/appForAction-1.0.dar'
+          darPackagePath: '/azworklflow-1.0.dar'
           action: 'publish_deploy'
           environmentId: 'Environments/envForAction'
           rollback: 'true'
